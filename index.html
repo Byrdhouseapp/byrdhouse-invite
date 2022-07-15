@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Byrdhouse Invite</title>
-</head>
-<body>
-  <script>
-    const urlSearchParams = new URLSearchParams(window.location.search);
-    const params = Object.fromEntries(urlSearchParams.entries());
-    console.log(params);
-    // Build byrdhouse url and attempt to open
-    let byrdhouseURL = `byrdhouse://invite/${params.id}?name=${params.name}&lang=${params.lang}`;
-    console.log(byrdhouseURL);
-    try {
-      window.location = byrdhouseURL;
-    } catch (e) {}
-    let openedApp = false;
-    if (window.location.href.indexOf("byrdhouse://") !== -1) {
-      openedApp = true;
-    }
-
-    // If app doesn't open, redirect to app store
-    setTimeout(() => {
-      if (!openedApp) {
-        window.location = "https://apps.apple.com/am/app/byrdhouse/id1582677519";
+  <head>
+    <title>Byrdhouse Invite</title>
+  </head>
+  <body>
+    <script>
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const params = Object.fromEntries(urlSearchParams.entries());
+      console.log(params);
+      // Build byrdhouse url and attempt to open
+      let byrdhouseURL = `byrdhouse://invite/${params.id}?name=${params.name}&lang=${params.lang}`;
+      console.log(byrdhouseURL);
+      try {
+        window.location = byrdhouseURL;
+      } catch (e) {}
+      let openedApp = false;
+      if (window.location.href.indexOf("byrdhouse://") !== -1) {
+        openedApp = true;
       }
-    }, 25);
-  </script>
-</body>
-</html> 
+
+      // If app doesn't open, redirect to app storeF
+      if (!openedApp) {
+        window.location =
+          "https://apps.apple.com/am/app/byrdhouse/id1582677519";
+      }
+    </script>
+  </body>
+</html>
