@@ -10,6 +10,7 @@
     console.log(params);
     // Build byrdhouse url and attempt to open
     let byrdhouseURL = `byrdhouse://invite/${params.id}/${params.name}/${params.lang}`;
+    console.log(byrdhouseURL);
     try {
       window.location = byrdhouseURL;
     } catch (e) {}
