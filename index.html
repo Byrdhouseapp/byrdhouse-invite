@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Byrdhouse Invite</title>
+    <a href="https://apps.apple.com/am/app/byrdhouse/id1582677519">Open in app store</a>
   </head>
   <body>
     <script>
@@ -14,16 +15,6 @@
       try {
         window.location = byrdhouseURL;
       } catch (e) {}
-      let openedApp = false;
-      if (window.location.href.indexOf("byrdhouse://") !== -1) {
-        openedApp = true;
-      }
-
-      // If app doesn't open, redirect to app storeF
-      if (!openedApp) {
-        window.location =
-          "https://apps.apple.com/am/app/byrdhouse/id1582677519";
-      }
     </script>
   </body>
 </html>
