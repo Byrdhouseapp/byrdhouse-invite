@@ -68,10 +68,7 @@
     <div class="content">
       <!-- Avatar/User info -->
       <div class="avatar">
-        <img
-          src="/placeholder.png"
-          alt="Avatar"
-        />
+        <img id="avatar" src="/placeholder.png" alt="Avatar" />
         <p id="name">Guest</p>
       </div>
       <p class="subtitle">invites you to a video chat on Byrdhouse</p>
@@ -88,6 +85,14 @@
       const urlSearchParams = new URLSearchParams(window.location.search);
       const params = Object.fromEntries(urlSearchParams.entries());
       console.log(params);
+      let name = params.name;
+      if (!name) {
+        name = "Guest";
+      }
+      document.getElementById("name").innerHTML = name;
+      if (params.avatar) {
+        document.getElementById("avatar").src = params.avatar;
+      }
       // Build byrdhouse url and attempt to open
       let byrdhouseURL = `byrdhouse://invite/${params.id}?name=${params.name}&lang=${params.lang}`;
       console.log(byrdhouseURL);
@@ -97,11 +102,6 @@
         }, 200);
       } catch (e) {}
       document.getElementById("openApp").href = byrdhouseURL;
-      let name = params.name;
-      if (!name) {
-        name = "Guest";
-      }
-      document.getElementById("name").innerHTML = name;
     </script>
   </body>
 </html>
