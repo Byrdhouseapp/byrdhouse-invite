@@ -68,8 +68,11 @@
     <div class="content">
       <!-- Avatar/User info -->
       <div class="avatar">
-        <img src="/placeholder.png" />
-        <p id="name">Snow Huo</p>
+        <img
+          src="/placeholder.png"
+          alt="Avatar"
+        />
+        <p id="name">Guest</p>
       </div>
       <p class="subtitle">invites you to a video chat on Byrdhouse</p>
       <!-- App store button -->
@@ -89,10 +92,16 @@
       let byrdhouseURL = `byrdhouse://invite/${params.id}?name=${params.name}&lang=${params.lang}`;
       console.log(byrdhouseURL);
       try {
-        window.location = byrdhouseURL;
+        setTimeout(() => {
+          window.location = byrdhouseURL;
+        }, 200);
       } catch (e) {}
       document.getElementById("openApp").href = byrdhouseURL;
-      document.getElementById("name").innerHTML = params.name;
+      let name = params.name;
+      if (!name) {
+        name = "Guest";
+      }
+      document.getElementById("name").innerHTML = name;
     </script>
   </body>
 </html>
