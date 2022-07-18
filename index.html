@@ -97,15 +97,13 @@
       }
 
       const locale = navigator.language;
-      switch (locale) {
-        case locale.includes("es"):
-          setSpanishText();
-          break;
-        case locale.includes("zh"):
-          setChineseText();
-          break;
-        default:
-          break;
+
+      if (locale.includes("es")) {
+        setSpanishText();
+      }
+
+      if (locale.includes("zh")) {
+        setChineseText();
       }
 
       const urlSearchParams = new URLSearchParams(window.location.search);
