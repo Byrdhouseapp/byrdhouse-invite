@@ -71,17 +71,43 @@
         <img id="avatar" src="/placeholder.png" alt="Avatar" />
         <p id="name">Guest</p>
       </div>
-      <p class="subtitle">invites you to a video chat on Byrdhouse</p>
+      <p class="subtitle" id="subtitle">invites you to a video chat on Byrdhouse</p>
       <!-- App store button -->
       <a
         class="button"
         href="https://apps.apple.com/am/app/byrdhouse/id1582677519"
+        id="download"
         >Download from App Store</a
       >
       <!-- Open in app link -->
       <a class="link" id="openApp">Open the App</a>
     </div>
     <script>
+      const setSpanishText = () => {
+        document.title = "Byrdhouse Invitación"
+        document.getElementById("subtitle").innerHTML = "te invita a un chat de video en Byrdhouse"
+        document.getElementById("download").innerHTML = "descargar desde la tienda de aplicaciones"
+        document.getElementById("openApp").innerHTML = "Abre la aplicación"
+      }
+      const setChineseText = () => {
+        document.title = "语舍邀请"
+        document.getElementById("subtitle").innerHTML = "邀请您在语舍视频通话"
+        document.getElementById("download").innerHTML = "苹果商店下载"
+        document.getElementById("openApp").innerHTML = "打开语舍app"
+      }
+
+      const locale = navigator.language;
+      switch (locale) {
+        case locale.includes("es"):
+          setSpanishText();
+          break;
+        case locale.includes("zh"):
+          setChineseText();
+          break;
+        default:
+          break;
+      }
+
       const urlSearchParams = new URLSearchParams(window.location.search);
       const params = Object.fromEntries(urlSearchParams.entries());
       console.log(params);
@@ -98,7 +124,7 @@
       console.log(byrdhouseURL);
       try {
         setTimeout(() => {
-          window.location = byrdhouseURL;
+          // window.location = byrdhouseURL;
         }, 200);
       } catch (e) {}
       document.getElementById("openApp").href = byrdhouseURL;
