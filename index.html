@@ -1,147 +1,167 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body {
-        width: 99%;
-        height: 99vh;
-        background: linear-gradient(
-          193.84deg,
+
+<head>
+  <style>
+    body {
+      width: 99%;
+      height: 99vh;
+      background: linear-gradient(193.84deg,
           #ab05f9 0%,
           rgba(248, 1, 1, 0.41) 60.38%,
           rgba(248, 150, 4, 0) 100%,
-          rgba(248, 150, 4, 0) 100%
-        );
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+          rgba(248, 150, 4, 0) 100%);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar {
+      color: white;
+      margin-top: 30vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar p {
+      font-size: 4em;
+      margin-bottom: 20px;
+    }
+
+    .avatar img {
+      width: 250px;
+      height: 250px;
+      border-radius: 250px;
+    }
+
+    .subtitle {
+      color: white;
+      font-size: 3em;
+      margin-bottom: 30vh;
+      margin-top: 0px;
+    }
+
+    .button {
+      font-size: 3em;
+      text-decoration: none;
+      background-color: white;
+      padding: 40px 60px 40px 60px;
+      text-align: center;
+      width: 80%;
+      border-radius: 40px;
+      margin-bottom: 40px;
+      font-style: normal;
+      font-weight: 400;
+      text-align: center;
+      letter-spacing: -0.02em;
+      color: #bb6bd9;
+    }
+
+    .link {
+      color: black;
+      text-decoration: underline;
+      font-size: 3em;
+    }
+
+    @media (min-width: 480px) {
       .avatar {
-        color: white;
-        margin-top: 30vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin-top: 10vh;
       }
-      .avatar p {
-        font-size: 4em;
-        margin-bottom: 20px;
-      }
-      .avatar img {
-        width: 250px;
-        height: 250px;
-        border-radius: 250px;
-      }
+
       .subtitle {
-        color: white;
-        font-size: 3em;
-        margin-bottom: 30vh;
-        margin-top: 0px;
+        margin-bottom: 10vh;
       }
+
       .button {
-        font-size: 3em;
-        text-decoration: none;
-        background-color: white;
-        padding: 40px 60px 40px 60px;
-        text-align: center;
-        width: 80%;
-        border-radius: 40px;
-        margin-bottom: 40px;
-        font-style: normal;
-        font-weight: 400;
-        text-align: center;
-        letter-spacing: -0.02em;
-        color: #bb6bd9;
+        width: 60%;
       }
-      .link {
-        color: black;
-        text-decoration: underline;
-        font-size: 3em;
-      }
+    }
+  </style>
+  <title>Byrdhouse Invite</title>
+</head>
 
-      @media (min-width: 480px) {
-        .avatar {
-          margin-top: 10vh;
-        }
-        .subtitle {
-          margin-bottom: 10vh;
-        }
-        .button {
-          width: 60%;
-        }
-      }
-    </style>
-    <title>Byrdhouse Invite</title>
-  </head>
-  <body>
-    <div class="content">
-      <!-- Avatar/User info -->
-      <div class="avatar">
-        <img id="avatar" src="/placeholder.png" alt="Avatar" />
-        <p id="name">Guest</p>
-      </div>
-      <p class="subtitle" id="subtitle">invites you to a video chat on Byrdhouse</p>
-      <!-- App store button -->
-      <a
-        class="button"
-        href="https://apps.apple.com/am/app/byrdhouse/id1582677519"
-        id="download"
-        >Download from App Store</a
-      >
-      <!-- Open in app link -->
-      <a class="link" id="openApp">Open the App</a>
+<body>
+  <div class="content">
+    <!-- Avatar/User info -->
+    <div class="avatar">
+      <img id="avatar" src="/placeholder.png" alt="Avatar" />
+      <p id="name">Guest</p>
     </div>
-    <script>
-      let guestPlaceholder = "Guest";
-      const setSpanishText = () => {
-        guestPlaceholder = "Partícipe";
-        document.title = "Byrdhouse Invitación"
-        document.getElementById("subtitle").innerHTML = "te invita a un chat de video en Byrdhouse"
-        document.getElementById("download").innerHTML = "descargar desde la tienda de aplicaciones"
-        document.getElementById("openApp").innerHTML = "Abre la aplicación"
-      }
-      const setChineseText = () => {
-        guestPlaceholder = "参与用户"
-        document.title = "语舍邀请"
-        document.getElementById("subtitle").innerHTML = "邀请您在语舍视频通话"
-        document.getElementById("download").innerHTML = "苹果商店下载"
-        document.getElementById("openApp").innerHTML = "打开语舍app"
-      }
+    <p class="subtitle" id="subtitle">invites you to a video chat on Byrdhouse</p>
+    <!-- App store button -->
+    <a class="button" href="https://apps.apple.com/am/app/byrdhouse/id1582677519" id="download">Download from App
+      Store</a>
+    <!-- Open in app link -->
+    <a class="link" id="openApp" onClick="clickOpenApp()">Open the App</a>
+  </div>
+  <script>
+    let guestPlaceholder = "Guest";
+    const setSpanishText = () => {
+      guestPlaceholder = "Partícipe";
+      document.title = "Byrdhouse Invitación"
+      document.getElementById("subtitle").innerHTML = "te invita a un chat de video en Byrdhouse"
+      document.getElementById("download").innerHTML = "descargar desde la tienda de aplicaciones"
+      document.getElementById("openApp").innerHTML = "Abre la aplicación"
+    }
+    const setChineseText = () => {
+      guestPlaceholder = "参与用户"
+      document.title = "语舍邀请"
+      document.getElementById("subtitle").innerHTML = "邀请您在语舍视频通话"
+      document.getElementById("download").innerHTML = "苹果商店下载"
+      document.getElementById("openApp").innerHTML = "打开语舍app"
+    }
 
-      const locale = navigator.language;
+    const getS3URL = (avatarURL, staging = false) => {
+      return new URL(avatarURL, "https://byrdhouse.s3.amazonaws.com").href;
+    }
 
-      if (locale.includes("es")) {
-        setSpanishText();
-      }
+    const locale = navigator.language;
 
-      if (locale.includes("zh")) {
-        setChineseText();
-      }
+    if (locale.includes("es")) {
+      setSpanishText();
+    }
 
-      const urlSearchParams = new URLSearchParams(window.location.search);
-      const params = Object.fromEntries(urlSearchParams.entries());
-      console.log(params);
-      let name = params.name;
-      if (!name) {
-        name = guestPlaceholder;
-      } else {
-        document.getElementById("name").innerHTML = name;
-      }
-      if (params.avatar) {
-        document.getElementById("avatar").src = params.avatar;
-      }
-      // Build byrdhouse url and attempt to open
-      let byrdhouseURL = `byrdhouse://invite/${params.id}?name=${params.name}&lang=${params.lang}`;
-      console.log(byrdhouseURL);
-      try {
-        setTimeout(() => {
-          window.location = byrdhouseURL;
-        }, 200);
-      } catch (e) {}
-      document.getElementById("openApp").href = byrdhouseURL;
-    </script>
-  </body>
+    if (locale.includes("zh")) {
+      setChineseText();
+    }
+
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    console.log(params);
+    let name = params.name;
+    if (!name) {
+      name = guestPlaceholder;
+    } else {
+      document.getElementById("name").innerHTML = name;
+    }
+    if (params.avatar) {
+      document.getElementById("avatar").src = getS3URL(params.avatar);
+    }
+    // Build byrdhouse url and attempt to open
+    let byrdhouseURL = `byrdhouse://invite/${encodeURIComponent(params.id)}/${encodeURIComponent(params.name)}/${encodeURIComponent(params.lang)}`;
+    if (params.avatar) {
+      console.log(params.avatar);
+      byrdhouseURL += `/${encodeURIComponent(params.avatar)}`;
+    }
+    console.log(byrdhouseURL);
+    let oldLocation = window.location;
+    try {
+      setTimeout(() => {
+        window.location = byrdhouseURL;
+      }, 200);
+    } catch (e) {
+      window.location = oldLocation;
+    }
+
+    function clickOpenApp() {
+      window.location = byrdhouseURL;
+    }
+  </script>
+</body>
+
 </html>
