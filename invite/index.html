@@ -148,16 +148,16 @@
       console.log(params.avatar);
       byrdhouseURL += `&avatar=${encodeURIComponent(params.avatar)}`;
     }
-    try {
-      window.location = byrdhouseURL;
-      setTimeout(() => {
-        if (window.location !== byrdhouseURL) {
-          window.location = "https://apps.apple.com/am/app/byrdhouse/id1582677519";
-        }
-      }, 200);
-    } catch (e) {
-      window.location = "https://apps.apple.com/am/app/byrdhouse/id1582677519";
-    }
+    // try {
+    //   window.location = byrdhouseURL;
+    //   setTimeout(() => {
+    //     if (window.location !== byrdhouseURL) {
+    //       window.location = "https://apps.apple.com/am/app/byrdhouse/id1582677519";
+    //     }
+    //   }, 200);
+    // } catch (e) {
+    //   window.location = "https://apps.apple.com/am/app/byrdhouse/id1582677519";
+    // }
 
     function clickOpenApp() {
       window.location = byrdhouseURL;
