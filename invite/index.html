@@ -148,15 +148,17 @@
       console.log(params.avatar);
       byrdhouseURL += `&avatar=${encodeURIComponent(params.avatar)}`;
     }
-    // console.log(byrdhouseURL);
-    // let oldLocation = window.location;
-    // try {
-    //   setTimeout(() => {
-    //     window.location = byrdhouseURL;
-    //   }, 200);
-    // } catch (e) {
-    //   window.location = oldLocation;
-    // }
+    let oldLocation = window.location;
+    try {
+      window.location = byrdhouseURL;
+      setTimeout(() => {
+        if (window.location !== byrdhouseURL) {
+          window.location = "https://apps.apple.com/am/app/byrdhouse/id1582677519";
+        }
+      }, 200);
+    } catch (e) {
+      window.location = oldLocation;
+    }
 
     function clickOpenApp() {
       window.location = byrdhouseURL;
