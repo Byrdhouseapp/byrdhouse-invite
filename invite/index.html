@@ -143,7 +143,7 @@
       document.getElementById("avatar").src = getS3URL(params.avatar);
     }
     // Build byrdhouse url and attempt to open
-    let byrdhouseURL = `byrdhouse://invite?id=${encodeURIComponent(params.id)}&name=${encodeURIComponent(params.name)}&lang=${encodeURIComponent(params.lang)}`;
+    let byrdhouseURL = `itms://apps.apple.com/am/app/byrdhouse/id1582677519/invite?id=${encodeURIComponent(params.id)}&name=${encodeURIComponent(params.name)}&lang=${encodeURIComponent(params.lang)}`;
     if (params.avatar) {
       console.log(params.avatar);
       byrdhouseURL += `&avatar=${encodeURIComponent(params.avatar)}`;
