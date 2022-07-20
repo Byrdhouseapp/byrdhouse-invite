@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["com.app.byrdhouse"],
+        "appID": "1582677519.com.app.byrdhouse",
         "paths": ["*"]
       }
     ]
