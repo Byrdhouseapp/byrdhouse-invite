@@ -130,9 +130,9 @@
       } else {
         document.getElementById("name").innerHTML = name;
       }
-      if (params.avatar) {
-        document.getElementById("avatar").src = params.avatar;
-      }
+      // if (params.avatar) {
+      //   document.getElementById("avatar").src = params.avatar;
+      // }
       // Build byrdhouse url and attempt to open
       let byrdhouseURL = `byrdhouse://invite/${params.id}?name=${params.name}&lang=${params.lang}`;
       console.log(byrdhouseURL);
