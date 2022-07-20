@@ -148,7 +148,6 @@
       console.log(params.avatar);
       byrdhouseURL += `&avatar=${encodeURIComponent(params.avatar)}`;
     }
-    let oldLocation = window.location;
     try {
       window.location = byrdhouseURL;
       setTimeout(() => {
@@ -157,7 +156,7 @@
         }
       }, 200);
     } catch (e) {
-      window.location = oldLocation;
+      window.location = "https://apps.apple.com/am/app/byrdhouse/id1582677519";
     }
 
     function clickOpenApp() {
